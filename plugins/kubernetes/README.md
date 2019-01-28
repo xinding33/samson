@@ -132,11 +132,11 @@ Via [Template filler](/plugins/kubernetes/app/models/kubernetes/template_filler.
 
 ### Migrations / Prerequisite
 
-Add a role with only a `Pod`, `metadata.annotations.samson/prerequisite: 'true'`, and command to run a migrations.
-It will be executed before the rest is deployed.
+Add a role with a `Pod` or `Job`, root `metadata.annotations.samson/prerequisite: 'true'`, and command to run a migrations.
+It will be executed before any other role is deployed.
 
 For default it waits for 10 minutes before timeout, you can change the timeout
-using KUBERNETES_WAIT_FOR_PREREQUISITES env variable (specified in seconds).
+using `KUBERNETES_WAIT_FOR_PREREQUISITES` env variable (specified in seconds).
 
 ### Deployment timeouts
 
